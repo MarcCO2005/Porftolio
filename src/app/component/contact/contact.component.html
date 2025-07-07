@@ -1,7 +1,7 @@
 <section class="contact-section">
   <h2 class="contact-title">Contacto</h2>
   <div class="contact-content">
-    <form class="contact-form" autocomplete="off">
+    <form class="contact-form" action="https://formspree.io/f/mwkgrgqg" method="POST">
       <div class="form-group">
         <label for="name">Nombre</label>
         <input id="name" name="name" type="text" placeholder="Tu nombre" required />
@@ -15,6 +15,7 @@
         <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
       </div>
       <button type="submit" class="cta-button primary">Enviar</button>
+      <p class="form-success" style="display:none; color:#00bfae; margin-top:1rem;">¡Mensaje enviado correctamente!</p>
     </form>
     <div class="contact-info">
       <p><strong>Email:</strong> marcacuencaolmos&#64;email.com</p>
