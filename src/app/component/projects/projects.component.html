@@ -1,0 +1,24 @@
+<section class="projects-section">
+  <h2 class="projects-title">Proyectos</h2>
+  <div class="projects-grid">
+    @for (project of projects; track project.title) {
+      <div class="project-card">
+        @if (project.image) {
+          <img class="project-image" [src]="project.image" [alt]="project.title">
+        }
+        <div class="project-content">
+          <h3 class="project-name">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-actions">
+            @if (project.demo) {
+              <a [href]="project.demo" target="_blank" class="cta-button primary">Ver demo</a>
+            }
+            @if (project.code) {
+              <a [href]="project.code" target="_blank" class="cta-button secondary">Ver código</a>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

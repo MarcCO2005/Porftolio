@@ -1,10 +1,13 @@
 import { Component, HostListener } from '@angular/core';
 import { JumbotronComponent } from '../../component/jumbotron/jumbotron.component';
 import { HeaderComponent } from '../../component/header/header.component';
+import { ProjectsComponent } from '../../component/projects/projects.component';
+import { AboutComponent } from '../../component/about/about.component';
+import { ContactComponent } from '../../component/contact/contact.component';
 
 @Component({
   selector: 'app-main',
-  imports: [JumbotronComponent, HeaderComponent],
+  imports: [JumbotronComponent, HeaderComponent, ProjectsComponent, AboutComponent, ContactComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
