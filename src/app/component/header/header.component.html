@@ -1,0 +1,32 @@
+<header class="header">
+    <nav class="nav-container">
+      <div class="logo">
+        <span class="logo-text">{{ name }}</span>
+      </div>
+      <div class="nav-menu" [class.active]="menuOpen">
+        @for (item of menuItems; track item.id) {
+          <a [href]="item.href" class="nav-link">{{ item.label }}</a>
+        }
+      </div>
+      <div class="nav-mobile">
+        <button class="menu-toggle" (click)="toggleMenu()" [class.active]="menuOpen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    @if (menuOpen) {
+      <div class="mobile-menu-overlay" (click)="toggleMenu()">
+        <div class="mobile-menu">
+          @for (item of menuItems; track item.id) {
+            <a [href]="item.href" class="mobile-nav-link" (click)="toggleMenu()">
+              {{ item.label }}
+            </a>
+          }
+        </div>
+      </div>
+    }
+  </header>
