@@ -61,6 +61,15 @@
     width: 100%;
   }
 
+  .nav-link.active {
+    color: #0078d4;
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+    background: #0078d4;
+  }
+
   .nav-mobile {
     display: none;
   }
@@ -127,6 +136,11 @@
 
   .mobile-nav-link:hover {
     color: #0078d4;
+  }
+
+  .mobile-nav-link.active {
+    color: #0078d4;
+    border-bottom: 2px solid #0078d4;
   }
 
   @keyframes fadeIn {
