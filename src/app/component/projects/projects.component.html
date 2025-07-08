@@ -1,8 +1,10 @@
 <section id="proyectos" class="projects-section">
-  <h2 class="projects-title">Proyectos</h2>
+  <h2 class="projects-title">Proyectos
+    <span class="projects-title-underline"></span>
+  </h2>
   <div class="projects-grid">
-    @for (project of projects; track project.title) {
-      <div class="project-card">
+    @for (project of projects; let i = $index; track project.title) {
+      <div class="project-card" [ngClass]="getCardPositionClass(i)" #card>
         @if (project.image) {
           <img class="project-image" [src]="project.image" [alt]="project.title">
         }
@@ -26,5 +28,13 @@
     <div class="floating-element"></div>
     <div class="floating-element"></div>
     <div class="floating-element"></div>
-</div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+  </div>
 </section>

@@ -1,8 +1,9 @@
 import { Component, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import { ScrollerCarrouselComponent } from '../scroller-carrousel/scroller-carrousel.component';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [ScrollerCarrouselComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

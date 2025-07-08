@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent implements AfterViewInit {
 
-  name = 'Tu Nombre';
+  name = 'Marc Cuenca';
   isScrolled = false;
   menuOpen = false;
   activeSection: string = '';
