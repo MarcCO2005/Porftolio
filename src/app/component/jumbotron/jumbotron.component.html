@@ -12,8 +12,7 @@
               class="char" 
               [style.animation-delay]="($index * 0.1) + 's'"
               [class.visible]="animationStarted"
-              [innerHTML]="char === ' ' ? '&nbsp;' : char">
-            </span>
+            >{{ char }}</span>
           }
         </h1>
         
@@ -22,9 +21,8 @@
             <span 
               class="char subtitle-char" 
               [style.animation-delay]="(2 + $index * 0.05) + 's'"
-              [class.visible]="animationStarted">
-              {{ char === ' ' ? '&nbsp;' : char }}
-            </span>
+              [class.visible]="animationStarted"
+            >{{ char }}</span>
           }
         </p>
         
@@ -33,9 +31,8 @@
             <p 
               class="description-line"
               [style.animation-delay]="(4 + $index * 0.5) + 's'"
-              [class.visible]="animationStarted">
-              {{ line }}
-            </p>
+              [class.visible]="animationStarted"
+            >{{ line }}</p>
           }
         </div>
         
