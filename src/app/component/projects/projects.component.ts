@@ -19,7 +19,7 @@ export class ProjectsComponent implements AfterViewInit {
     {
       title: 'Tienda Online',
       description: 'E-commerce moderno con carrito, pagos y panel de administración.',
-      image: '',
+      image: 'project2.jpg',
       demo: '#',
       code: 'https://github.com/MarcCO2005/Taskly_TFG'
     },

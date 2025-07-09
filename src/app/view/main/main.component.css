@@ -43,18 +43,18 @@
 
   
 @keyframes float {
-    0% {
-        transform: translateY(100vh) translateX(0);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.3;
-    }
-    90% {
-        opacity: 0.3;
-    }
-    100% {
-        transform: translateY(-100px) translateX(100px);
-        opacity: 0;
-    }
+  0% {
+      transform: translateY(100vh) translateX(0);
+      opacity: 0;
   }
+  10% {
+      opacity: 0.3;
+  }
+  90% {
+      opacity: 0.3;
+  }
+  100% {
+      transform: translateY(-100px) translateX(100px);
+      opacity: 0;
+  }
+}
