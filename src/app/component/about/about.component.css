@@ -402,10 +402,20 @@ body {
   .about-text {
     font-size: 0.92rem;
     margin: 0.7rem 0;
+    text-align: justify;
+    font-style: italic;
+    text-shadow: 1px 2px 8px rgba(0,0,0,0.18);
+    animation: aboutWave 2.5s ease-in-out infinite alternate;
   }
   .about-text p {
     margin-bottom: 1rem;
   }
+}
+
+@keyframes aboutWave {
+  0% { letter-spacing: 0.5px; transform: skewY(0deg); }
+  50% { letter-spacing: 1.5px; transform: skewY(1.5deg); }
+  100% { letter-spacing: 0.5px; transform: skewY(0deg); }
 }
 
 /* Simulador de componente Angular */
