@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, NgZone } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -45,21 +45,6 @@ export class HeaderComponent implements AfterViewInit {
         }
       }, { threshold: [0.3, 0.5, 0.7] });
       sections.forEach(section => observer.observe(section));
-    }
-    // Animación de la imagen de cabecera según scroll
-    if (typeof window !== 'undefined') {
-      const headerImage = document.querySelector('.header-image') as HTMLElement;
-      if (headerImage) {
-        window.addEventListener('scroll', () => {
-          const rect = headerImage.getBoundingClientRect();
-          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-          // Progreso: 0 (imagen completamente visible) a 1 (imagen fuera de vista)
-          let progress = 1 - Math.max(0, Math.min(1, rect.bottom / windowHeight));
-          progress = Math.max(0, Math.min(progress, 1));
-          headerImage.style.opacity = (1 - 0.2 * progress).toString(); // de 1 a 0.8
-          headerImage.style.transform = `scale(${1 + 2 * progress})`;
-        });
-      }
     }
   }
 
