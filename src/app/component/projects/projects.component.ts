@@ -27,7 +27,7 @@ export class ProjectsComponent implements AfterViewInit {
       title: 'Taskly',
       description: 'Chatbot de generacion de tareas con IA.',
       image: 'project3.jpg',
-      demo: '/videoTaskly.mp4',
+      demo: '/VideoTaskly.mp4',
       code: 'https://github.com/MarcCO2005/Taskly_TFG.git',
 
     }
