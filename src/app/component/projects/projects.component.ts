@@ -24,9 +24,9 @@ export class ProjectsComponent implements AfterViewInit {
       code: 'https://github.com/MarcCO2005/Taskly_TFG'
     },
     {
-      title: 'App de Tareas',
-      description: 'Gestor de tareas con autenticación y generacion de tareas con IA.',
-      image: '',
+      title: 'Taskly',
+      description: 'Chatbot de generacion de tareas con IA.',
+      image: 'project3.jpg',
       demo: '#',
       code: '#'
     }
