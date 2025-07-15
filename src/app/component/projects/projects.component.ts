@@ -13,22 +13,23 @@ export class ProjectsComponent implements AfterViewInit {
       title: 'Portfolio Personal',
       description: 'Mi portafolio web hecho con Angular, animaciones y diseño responsive.',
       image: 'project1.jpg',
-      demo: '#',
-      code: '#'
+      website: 'https://porftolio-delta.vercel.app',
+      video: ''
     },
     {
-      title: 'Tienda Online',
-      description: 'E-commerce moderno con carrito, pagos y panel de administración.',
+      title: 'Negombo',
+      description: 'Página web de rervas de un parque natural.',
       image: 'project2.jpg',
-      demo: '#',
-      code: 'https://github.com/MarcCO2005/Taskly_TFG'
+      website: 'https://prenotazioni.negombo.it',
+
     },
     {
       title: 'Taskly',
       description: 'Chatbot de generacion de tareas con IA.',
       image: 'project3.jpg',
-      demo: '#',
-      code: '#'
+      demo: '/videoTaskly.mp4',
+      code: 'https://github.com/MarcCO2005/Taskly_TFG.git',
+
     }
   ];
 

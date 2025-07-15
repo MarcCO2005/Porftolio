@@ -11,3 +11,56 @@ body {
   overflow-x: hidden;
 }
 
+/* Elementos flotantes responsivos */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-element {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+}
+
+.floating-element:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.floating-element:nth-child(3) {
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.floating-element:nth-child(4) {
+  left: 80%;
+  animation-delay: 6s;
+}
+
+@media (max-width: 768px) {
+  .floating-element {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-element {
+    width: 10px;
+    height: 10px;
+  }
+}
