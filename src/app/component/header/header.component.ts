@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent implements AfterViewInit, OnInit {
 
   name = 'Marc Cuenca';
   isScrolled = false;
@@ -23,6 +23,8 @@ export class HeaderComponent implements AfterViewInit {
 
   ngOnInit() {
     this.handleScroll();
+    this.handleHashChange();
+    this.checkInitialHash();
   }
 
   ngAfterViewInit() {
@@ -54,6 +56,31 @@ export class HeaderComponent implements AfterViewInit {
         this.isScrolled = window.scrollY > 50;
       });
     }
+  }
+
+  handleHashChange() {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('hashchange', () => {
+        this.updateActiveSectionFromHash();
+      });
+    }
+  }
+
+  checkInitialHash() {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      this.updateActiveSectionFromHash();
+    }
+  }
+
+  updateActiveSectionFromHash() {
+    const hash = window.location.hash;
+    if (hash && this.menuItems.some(item => item.href === hash)) {
+      this.activeSection = hash;
+    }
+  }
+
+  onNavItemClick(href: string) {
+    this.activeSection = href;
   }
 
   toggleMenu() {

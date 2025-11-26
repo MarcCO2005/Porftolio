@@ -5,7 +5,7 @@
       </div>
       <div class="nav-menu" [class.active]="menuOpen">
         @for (item of menuItems; track item.id) {
-          <a [href]="item.href" class="nav-link" [class.active]="activeSection === item.href">{{ item.label }}</a>
+          <a [href]="item.href" class="nav-link" [class.active]="activeSection === item.href" (click)="onNavItemClick(item.href)">{{ item.label }}</a>
         }
       </div>
       <div class="nav-mobile">
@@ -22,7 +22,7 @@
       <div class="mobile-menu-overlay" (click)="toggleMenu()">
         <div class="mobile-menu">
           @for (item of menuItems; track item.id) {
-            <a [href]="item.href" class="mobile-nav-link" [class.active]="activeSection === item.href" (click)="toggleMenu()">
+            <a [href]="item.href" class="mobile-nav-link" [class.active]="activeSection === item.href" (click)="onNavItemClick(item.href); toggleMenu()">
               {{ item.label }}
             </a>
           }
