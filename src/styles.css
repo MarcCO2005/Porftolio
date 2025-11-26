@@ -11,45 +11,56 @@ body {
   overflow-x: hidden;
 }
 
+/* Elementos flotantes responsivos */
 .floating-elements {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
   pointer-events: none;
+  z-index: 1;
 }
 
 .floating-element {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.15);
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  animation: float 20s linear infinite;
+  animation: float 15s infinite linear;
 }
 
 .floating-element:nth-child(1) {
   left: 10%;
   animation-delay: 0s;
-  animation-duration: 15s;
 }
 
 .floating-element:nth-child(2) {
   left: 20%;
-  animation-delay: 5s;
-  animation-duration: 20s;
+  animation-delay: 2s;
 }
 
 .floating-element:nth-child(3) {
-  left: 80%;
-  animation-delay: 10s;
-  animation-duration: 18s;
+  left: 70%;
+  animation-delay: 4s;
 }
 
 .floating-element:nth-child(4) {
-  left: 90%;
-  animation-delay: 15s;
-  animation-duration: 22s;
+  left: 80%;
+  animation-delay: 6s;
+}
+
+@media (max-width: 768px) {
+  .floating-element {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-element {
+    width: 10px;
+    height: 10px;
+  }
 }

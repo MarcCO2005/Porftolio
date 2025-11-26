@@ -4,11 +4,12 @@ import { HeaderComponent } from '../../component/header/header.component';
 import { ProjectsComponent } from '../../component/projects/projects.component';
 import { AboutComponent } from '../../component/about/about.component';
 import { ContactComponent } from '../../component/contact/contact.component';
-import { ScrollerCarrouselComponent } from '../../component/scroller-carrousel/scroller-carrousel.component';
+import { FooterComponent } from '../../component/footer/footer.component';
+
 
 @Component({
   selector: 'app-main',
-  imports: [JumbotronComponent, HeaderComponent, ProjectsComponent, AboutComponent, ContactComponent, ScrollerCarrouselComponent],
+  imports: [JumbotronComponent, HeaderComponent, ProjectsComponent, AboutComponent, ContactComponent, FooterComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })

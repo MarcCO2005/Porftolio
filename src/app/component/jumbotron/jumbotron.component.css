@@ -2,17 +2,25 @@
   display: grid;
   place-items: center;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   overflow-x: clip;
   padding-block: 7rem;
   margin-block-end: 3rem;
   background-color: #000;
-  z-index: 20; /* Alto z-index para estar sobre las demás secciones */
+  z-index: 20;
   
-  /* Animación de salida */
+  /* Animación de salida restaurada */
   animation: fade-out linear;
   animation-timeline: view();
   animation-range: exit;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  left: 0;
+  right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
 }
 
 .jumbotron-content {
@@ -23,20 +31,267 @@
   width: 100%;
   max-width: 1600px;
   z-index: 2;
+  padding: 0 1rem; /* Añadido padding lateral para móviles */
 }
 
 .jumbotron-img {
   grid-column: 1 / -1;
   position: absolute;
   inset: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   z-index: -1;
   
   animation: header-image-animation linear;
   animation-timeline: view();
   animation-range: exit;
+}
+
+/* Ajuste para pantallas con poca altura */
+@media (max-height: 700px) {
+  .jumbotron-bg {
+    padding-block: 1.5rem;
+    height: 100vh;
+    min-height: 100vh;
+  }
+  
+  .jumbotron-img {
+    object-position: center center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Ajustes para pantallas muy cortas */
+@media (max-height: 500px) {
+  .jumbotron-bg {
+    padding-block: 1rem;
+    height: 100vh;
+    min-height: 100vh;
+  }
+  .jumbotron-img {
+    object-position: center center;
+    height: 100%;
+    width: 100%;
+  }
+  .main-title {
+    font-size: clamp(2rem, 6vw, 4rem) !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem) !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .description {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .cta-container {
+    margin-top: 1.5rem !important;
+  }
+  
+  .scroll-indicator {
+    margin-bottom: 1rem !important;
+  }
+  
+  .scroll-arrow {
+    margin-top: 1rem !important;
+  }
+}
+
+/* Ajustes específicos para iPhone SE y pantallas similares (375px x 667px) */
+@media (max-width: 375px) {
+  .jumbotron-bg {
+    padding-block: 2rem;
+    height: 100vh;
+    min-height: 100vh;
+  }
+  
+  .jumbotron-content {
+    padding: 0 1rem;
+  }
+  
+  .main-title {
+    font-size: clamp(2rem, 12vw, 3rem) !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .subtitle {
+    font-size: clamp(0.9rem, 5vw, 1.3rem) !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .description {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .description-line {
+    font-size: clamp(0.8rem, 4vw, 1rem) !important;
+    line-height: 1.4 !important;
+  }
+  
+  .cta-container {
+    margin-top: 1.5rem !important;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .scroll-indicator {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .scroll-arrow {
+    margin-top: 1.5rem !important;
+    height: 25px;
+  }
+  
+  .scroll-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .jumbotron-bg {
+    padding-block: 4rem;
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  
+  .jumbotron-content {
+    padding: 0 1.5rem;
+  }
+  
+  .main-title {
+    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+    line-height: 1.1;
+  }
+  
+  .subtitle {
+    font-size: clamp(1.2rem, 5vw, 2rem) !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .description-line {
+    font-size: clamp(1rem, 3vw, 1.2rem) !important;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .jumbotron-bg {
+    padding-block: 5rem;
+  }
+  
+  .main-title {
+    font-size: clamp(3rem, 7vw, 5rem) !important;
+  }
+  
+  .subtitle {
+    font-size: clamp(1.3rem, 4vw, 2.2rem) !important;
+  }
+}
+
+/* Ajustes para pantallas muy anchas */
+@media (min-width: 1400px) {
+  .jumbotron-bg {
+    padding-block: 8rem;
+  }
+  
+  .main-title {
+    font-size: 6rem !important;
+  }
+  
+  .subtitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .description-line {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Orientación landscape en móviles pequeños como iPhone SE */
+@media (max-width: 667px) and (orientation: landscape) {
+  .jumbotron-bg {
+    height: 100vh;
+    padding-block: 1rem;
+  }
+  
+  .main-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+    margin-bottom: 0.3rem !important;
+  }
+  
+  .subtitle {
+    font-size: clamp(0.9rem, 4vw, 1.3rem) !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .description {
+    margin-bottom: 1rem !important;
+  }
+  
+  .description-line {
+    font-size: clamp(0.8rem, 3vw, 1rem) !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .cta-container {
+    margin-top: 1rem !important;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .cta-button {
+    width: auto;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+  
+  .scroll-indicator {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .scroll-arrow {
+    margin-top: 0.5rem !important;
+    height: 15px;
+  }
+  
+  .scroll-text {
+    font-size: 0.7rem;
+  }
 }
 
 @keyframes fade-out {
@@ -199,6 +454,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 @keyframes fadeInUp {
   from {
       opacity: 0;
@@ -250,3 +506,76 @@
   }
 }
 
+/* Elementos flotantes responsivos */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-element {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+}
+
+.floating-element:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.floating-element:nth-child(3) {
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.floating-element:nth-child(4) {
+  left: 80%;
+  animation-delay: 6s;
+}
+
+@media (max-width: 768px) {
+  .floating-element {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-element {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Imagen de fondo cubre todo el ancho a partir de 750px */
+@media (min-width: 750px) {
+  .jumbotron-bg {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    left: 0;
+    right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+  .jumbotron-img {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
