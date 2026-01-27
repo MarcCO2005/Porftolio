@@ -5,11 +5,13 @@ import { ProjectsComponent } from '../../component/projects/projects.component';
 import { AboutComponent } from '../../component/about/about.component';
 import { ContactComponent } from '../../component/contact/contact.component';
 import { FooterComponent } from '../../component/footer/footer.component';
+import { ExperienceComponent } from '../../component/experience/experience.component';
+import { EducationComponent } from '../../component/education/education.component';
 
 
 @Component({
   selector: 'app-main',
-  imports: [JumbotronComponent, HeaderComponent, ProjectsComponent, AboutComponent, ContactComponent, FooterComponent],
+  imports: [JumbotronComponent, HeaderComponent, ProjectsComponent, AboutComponent, ContactComponent, FooterComponent, ExperienceComponent, EducationComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })

@@ -1,0 +1,31 @@
+<section class="experience-section" id="experiencia">
+    <h2 class="section-title">Experiencia Profesional</h2>
+
+    <div class="timeline">
+        <div class="timeline-item" *ngFor="let exp of experiences">
+            <!-- Decorator / Line -->
+            <div class="timeline-marker">
+                <div class="timeline-icon">
+                    <i [class]="exp.icon"></i>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="timeline-content">
+                <div class="header">
+                    <h3 class="role">{{ exp.role }} <span class="company">&#64; {{ exp.company }}</span></h3>
+                    <span class="date">{{ exp.date }}</span>
+                </div>
+
+                <ul class="description-list">
+                    <li *ngFor="let desc of exp.description">{{ desc }}</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag" *ngFor="let tag of exp.tags">{{ tag }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

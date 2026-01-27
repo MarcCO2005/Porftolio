@@ -1,53 +1,38 @@
-<div id="inicio" class="jumbotron-bg">
-  <img class="jumbotron-img" src="bg-portfolio.jpg" alt="Jumbotron background" />
+<div id="inicio" class="jumbotron-bg" #jumbotronBg>
+  <img class="jumbotron-img" src="bg-portfolio.jpg" alt="Jumbotron background" #jumbotronImg />
 
   <div class="jumbotron-content">
-    
+
     <!-- Contenido personalizado del portafolio -->
     <div class="portfolio-content">
       <div class="text-container">
         <h1 class="main-title">
           @for (char of titleChars; track $index) {
-            <span 
-              class="char" 
-              [style.animation-delay]="($index * 0.1) + 's'"
-              [class.visible]="animationStarted"
-            >{{ char }}</span>
+          <span class="char" [style.animation-delay]="($index * 0.1) + 's'" [class.visible]="animationStarted">{{ char
+            }}</span>
           }
         </h1>
-        
+
         <p class="subtitle">
           @for (char of subtitleChars; track $index) {
-            <span 
-              class="char subtitle-char" 
-              [style.animation-delay]="(2 + $index * 0.05) + 's'"
-              [class.visible]="animationStarted"
-            >{{ char }}</span>
+          <span class="char subtitle-char" [style.animation-delay]="(2 + $index * 0.05) + 's'"
+            [class.visible]="animationStarted">{{ char }}</span>
           }
         </p>
-        
+
         <div class="description">
           @for (line of descriptionLines; track $index) {
-            <p 
-              class="description-line"
-              [style.animation-delay]="(4 + $index * 0.5) + 's'"
-              [class.visible]="animationStarted"
-            >{{ line }}</p>
+          <p class="description-line" [style.animation-delay]="(4 + $index * 0.5) + 's'"
+            [class.visible]="animationStarted">{{ line }}</p>
           }
         </div>
-        
+
         <div class="cta-container">
-          <button 
-            class="cta-button primary"
-            [class.visible]="animationStarted"
-            style="animation-delay: 2.2s;"
+          <button class="cta-button primary" [class.visible]="animationStarted" style="animation-delay: 2.2s;"
             (click)="scrollToSection('#proyectos')">
             Ver mi trabajo
           </button>
-          <button 
-            class="cta-button secondary"
-            [class.visible]="animationStarted"
-            style="animation-delay: 2.4s;"
+          <button class="cta-button secondary" [class.visible]="animationStarted" style="animation-delay: 2.4s;"
             (click)="scrollToSection('#contacto')">
             Contáctame
           </button>
@@ -57,7 +42,7 @@
 
     <!-- Contenido proyectado desde el padre -->
     <ng-content></ng-content>
-    
+
     <!-- Scroll Indicator -->
     <div class="scroll-indicator" [class.visible]="animationStarted" style="animation-delay: 1s;">
       <div class="scroll-arrow"></div>
@@ -69,5 +54,5 @@
     <div class="floating-element"></div>
     <div class="floating-element"></div>
     <div class="floating-element"></div>
-</div>
+  </div>
 </div>

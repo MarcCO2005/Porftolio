@@ -158,8 +158,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .contact-info {
@@ -267,38 +272,48 @@
             .contact-section {
                 padding: 3rem 0.5rem;
             }
+
             .contact-title {
                 font-size: 2rem;
                 margin-bottom: 2rem;
             }
+
             .contact-title::after {
                 width: 50px;
             }
+
             .contact-content {
                 padding: 1rem 0.5rem;
                 gap: 1.5rem;
             }
-            .contact-form, .contact-info {
+
+            .contact-form,
+            .contact-info {
                 min-width: unset;
                 padding: 0.5rem;
             }
+
             .form-group label {
                 font-size: 1rem;
             }
+
             .form-group input,
             .form-group textarea {
                 font-size: 0.95rem;
                 padding: 0.7rem 0.8rem;
             }
+
             .contact-form .cta-button {
                 font-size: 1rem;
                 padding: 0.8rem;
             }
+
             .contact-info p {
                 font-size: 1rem;
                 margin-bottom: 1rem;
                 padding-bottom: 1rem;
             }
+
             .contact-circle {
                 width: 120px;
                 height: 120px;
@@ -310,13 +325,16 @@
             .contact-title {
                 font-size: 1.3rem;
             }
+
             .contact-content {
                 padding: 0.5rem 0.2rem;
             }
+
             .contact-form .cta-button {
                 font-size: 0.95rem;
                 padding: 0.6rem;
             }
+
             .contact-info p {
                 font-size: 0.95rem;
             }
@@ -328,6 +346,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -339,6 +358,7 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
             to {
                 opacity: 0;
                 transform: translateY(50px);
@@ -346,8 +366,21 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(-10px, -15px); }
-            50% { transform: translate(5px, 10px); }
-            75% { transform: translate(10px, -5px); }
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(-10px, -15px);
+            }
+
+            50% {
+                transform: translate(5px, 10px);
+            }
+
+            75% {
+                transform: translate(10px, -5px);
+            }
         }

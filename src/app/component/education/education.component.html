@@ -1,0 +1,28 @@
+<section class="education-section" id="educacion">
+    <h2 class="section-title">Estudios</h2>
+
+    <div class="timeline-container">
+        <div class="center-line"></div>
+
+        <div class="timeline-items">
+            <div class="timeline-item" *ngFor="let item of education; let i = index" [class.left]="i % 2 === 0"
+                [class.right]="i % 2 !== 0">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content-wrapper">
+                    <div class="timeline-content">
+                        <span class="date">{{ item.date }}</span>
+                        <h3 class="title">{{ item.title }}</h3>
+                        <p class="school">{{ item.school }}</p>
+                        <p class="description">{{ item.description }}</p>
+                        <ul class="module-list">
+                            <li *ngFor="let module of item.modules">{{ module }}</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag" *ngFor="let tag of item.tags">{{ tag }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

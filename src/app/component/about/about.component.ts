@@ -8,7 +8,7 @@ import { ScrollerCarrouselComponent } from '../scroller-carrousel/scroller-carro
   styleUrl: './about.component.css'
 })
 export class AboutComponent implements AfterViewInit {
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   ngAfterViewInit() {
     const section = this.el.nativeElement.querySelector('.about-section');

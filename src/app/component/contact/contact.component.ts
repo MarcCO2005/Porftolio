@@ -7,7 +7,7 @@ import { Component, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements AfterViewInit {
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   ngAfterViewInit() {
     const section = this.el.nativeElement.querySelector('.contact-section');

@@ -1,0 +1,218 @@
+.education-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.timeline-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.center-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #374151;
+    /* Match experience timeline color */
+}
+
+.timeline-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.timeline-item {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    width: 12px;
+    height: 12px;
+    background-color: #4da3ff;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(77, 163, 255, 0.5);
+}
+
+.timeline-content-wrapper {
+    width: 50%;
+    display: flex;
+}
+
+/* Left alignment */
+.timeline-item.left {
+    justify-content: flex-start;
+    text-align: right;
+}
+
+.timeline-item.left .timeline-content-wrapper {
+    padding-right: 3rem;
+    justify-content: flex-end;
+}
+
+/* Right alignment */
+.timeline-item.right {
+    justify-content: flex-end;
+    text-align: left;
+}
+
+.timeline-item.right .timeline-content-wrapper {
+    padding-left: 3rem;
+    justify-content: flex-start;
+}
+
+.timeline-content {
+    background-color: #11182750;
+    /* Subtle background for readability */
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #37415130;
+    max-width: 450px;
+}
+
+.date {
+    font-size: 0.875rem;
+    color: #60a5fa;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #fff;
+}
+
+.school {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.description {
+    font-size: 0.9375rem;
+    color: #9ca3af;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+    font-size: 0.875rem;
+    color: #9ca3af;
+    text-align: inherit;
+}
+
+.module-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.35rem;
+}
+
+.timeline-item.left .module-list li {
+    padding-left: 0;
+    padding-right: 1.25rem;
+}
+
+.module-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4da3ff;
+}
+
+.timeline-item.left .module-list li::before {
+    left: auto;
+    right: 0;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: inherit;
+}
+
+.timeline-item.left .tags {
+    justify-content: flex-end;
+}
+
+.tag {
+    background-color: #1f2937;
+    color: #e5e7eb;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #37415175;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .center-line {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .timeline-item.left .timeline-content-wrapper,
+    .timeline-item.right .timeline-content-wrapper {
+        width: 100%;
+        padding-left: 45px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+
+    .timeline-item.left .module-list li {
+        padding-left: 1.25rem;
+        padding-right: 0;
+    }
+
+    .timeline-item.left .module-list li::before {
+        left: 0;
+        right: auto;
+    }
+
+    .timeline-item.left .tags {
+        justify-content: flex-start;
+    }
+}
