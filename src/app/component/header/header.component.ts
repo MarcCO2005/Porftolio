@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../service/translation.service';
 
 @Component({
   selector: 'app-header',
@@ -15,14 +16,18 @@ export class HeaderComponent implements AfterViewInit, OnInit, OnDestroy {
   menuOpen = false;
   activeSection: string = '';
 
-  menuItems = [
-    { id: 1, label: 'Inicio', href: '#inicio' },
-    { id: 2, label: 'Sobre mí', href: '#sobre-mi' },
-    { id: 3, label: 'Experiencia', href: '#experiencia' },
-    { id: 4, label: 'Educación', href: '#educacion' },
-    { id: 5, label: 'Proyectos', href: '#proyectos' },
-    { id: 6, label: 'Contacto', href: '#contacto' }
-  ];
+  constructor(public ts: TranslationService) { }
+
+  get menuItems() {
+    return [
+      { id: 1, label: this.ts.t('nav.home'), href: '#inicio' },
+      { id: 2, label: this.ts.t('nav.about'), href: '#sobre-mi' },
+      { id: 3, label: this.ts.t('nav.experience'), href: '#experiencia' },
+      { id: 4, label: this.ts.t('nav.studies'), href: '#estudios' },
+      { id: 5, label: this.ts.t('nav.projects'), href: '#proyectos' },
+      { id: 6, label: this.ts.t('nav.contact'), href: '#contacto' }
+    ];
+  }
 
   private scrollListener: any;
 

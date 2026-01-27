@@ -1,22 +1,14 @@
 <section id="sobre-mi" class="about-section container py-5">
-  <h2 class="about-title text-center mb-4">Sobre Mí</h2>
+  <h2 class="about-title text-center mb-4">{{ ts.t('about.title') }}</h2>
   <div class="about-content row justify-content-center align-items-center">
     <div class="about-photo-container col-12 col-sm-4 d-flex justify-content-center mb-3 mb-sm-0">
       <img class="about-photo img-fluid rounded-circle" src="fotoMarc.jpg" alt="Profile">
     </div>
     <div class="about-text col-12 col-sm-6">
-      <h3>Compromiso, Innovación y Desarrollo</h3>
-      <p>Soy un desarrollador Full-Stack con una mentalidad orientada a la resolución de problemas y la excelencia
-        técnica.
-        Mi experiencia abarca desde el frontend con Angular y React hasta ecosistemas backend robustos con Symfony y
-        Laravel.</p>
-      <p>Un punto de inflexión en mi carrera fue mi experiencia Erasmus, donde realicé mis prácticas
-        profesionales en un entorno internacional. Esta etapa no solo consolidó mis habilidades técnicas, sino que
-        también impulsó mi dominio del inglés (Nivel B2/C1), permitiéndome trabajar en equipos
-        multiculturales con fluidez.</p>
-      <p>Me apasiona diseñar arquitecturas limpias y escalables, siempre buscando el equilibrio entre una estética
-        cuidada y un código sólido. Estoy en constante evolución, explorando nuevas tecnologías para ofrecer siempre el
-        mejor resultado posible.</p>
+      <h3>{{ ts.t('about.subtitle') }}</h3>
+      <p>{{ ts.t('about.p1') }}</p>
+      <p [innerHTML]="ts.t('about.p2')"></p>
+      <p>{{ ts.t('about.p3') }}</p>
       <scroller-carrousel></scroller-carrousel>
     </div>
   </div>

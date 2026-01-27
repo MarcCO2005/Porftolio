@@ -1,41 +1,46 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { NgClass, CommonModule } from '@angular/common';
+import { TranslationService } from '../../service/translation.service';
 
 @Component({
   selector: 'app-projects',
-  imports: [NgClass],
+  standalone: true,
+  imports: [NgClass, CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent implements AfterViewInit {
-  projects = [
-    {
-      title: 'Portfolio Personal',
-      description: 'Mi portafolio web hecho con Angular, animaciones y diseño responsive.',
-      image: 'project1.jpg',
-      website: 'https://porftolio-delta.vercel.app',
-      video: ''
-    },
-    {
-      title: 'Negombo',
-      description: 'Página web de rervas de un parque natural.',
-      image: 'project2.jpg',
-      website: 'https://prenotazioni.negombo.it',
+  constructor(private el: ElementRef, public ts: TranslationService) { }
 
-    },
-    {
-      title: 'Taskly',
-      description: 'Chatbot de generacion de tareas con IA.',
-      image: 'project3.jpg',
-      demo: '/VideoTaskly.mp4',
-      code: 'https://github.com/MarcCO2005/Taskly_TFG.git',
-
-    }
-  ];
+  get projects() {
+    return [
+      {
+        title: this.ts.t('projects.p1.title'),
+        description: this.ts.t('projects.p1.desc'),
+        image: 'project1.jpg',
+        website: 'https://porftolio-delta.vercel.app',
+        video: '',
+        tags: ['Angular', 'GSAP', 'TypeScript', 'i18n']
+      },
+      {
+        title: this.ts.t('projects.p2.title'),
+        description: this.ts.t('projects.p2.desc'),
+        image: 'project2.jpg',
+        isPrivate: true,
+        tags: ['LARAVEL', 'React', 'API REST', 'PAYMENT GATEWAY']
+      },
+      {
+        title: this.ts.t('projects.p3.title'),
+        description: this.ts.t('projects.p3.desc'),
+        image: 'project3.jpg',
+        video: '/VideoTaskly.mp4',
+        code: 'https://github.com/MarcCO2005/Taskly_TFG.git',
+        tags: ['Firebase', 'Angular', 'Symfony', 'SMS Service']
+      }
+    ];
+  }
 
   visibleCards: boolean[] = [];
-
-  constructor(private el: ElementRef) {}
 
   ngAfterViewInit() {
     // Animación de la sección completa

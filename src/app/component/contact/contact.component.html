@@ -4,33 +4,35 @@
         <div class="contact-circle"></div>
     </div>
 
-    <h2 class="contact-title">Contacto</h2>
+    <h2 class="contact-title">{{ ts.t('contact.title') }}</h2>
 
     <div class="contact-content">
         <form class="contact-form" action="https://formspree.io/f/xrbkwjnj" method="POST">
             <div class="form-group">
-                <label for="name">Nombre</label>
-                <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+                <label for="name">{{ ts.t('contact.name') }}</label>
+                <input id="name" name="name" type="text" [placeholder]="ts.t('contact.placeholderName')" required />
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="tu-email@email.com" required />
+                <label for="email">{{ ts.t('contact.email') }}</label>
+                <input id="email" name="email" type="email" [placeholder]="ts.t('contact.placeholderEmail')" required />
             </div>
 
             <div class="form-group">
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+                <label for="message">{{ ts.t('contact.message') }}</label>
+                <textarea id="message" name="message" rows="5" [placeholder]="ts.t('contact.placeholderMessage')"
+                    required></textarea>
             </div>
 
-            <button type="submit" class="cta-button primary">Enviar</button>
-            <p class="form-success" style="display:none;">¡Mensaje enviado correctamente!</p>
+            <button type="submit" class="cta-button primary">{{ ts.t('contact.send') }}</button>
+            <p class="form-success" style="display:none;">{{ ts.t('contact.success') }}</p>
         </form>
 
         <div class="contact-info">
             <p><strong>Email:</strong> marcacuencaolmos&#64;email.com</p>
-            <p><strong>LinkedIn:</strong> <a href="#" target="_blank">linkedin.com/in/marccuenca</a></p>
-            <p><strong>Ubicación:</strong> Valencia, España</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/marccuenca"
+                    target="_blank">linkedin.com/in/marccuenca</a></p>
+            <p><strong>{{ ts.t('contact.infoLocation') }}:</strong> {{ ts.t('contact.valencia') }}</p>
         </div>
     </div>
 </section>

@@ -1,11 +1,11 @@
-<section class="education-section" id="educacion">
-    <h2 class="section-title">Estudios</h2>
+<section class="studies-section" id="estudios">
+    <h2 class="section-title">{{ ts.t('studies.title') }}</h2>
 
     <div class="timeline-container">
         <div class="center-line"></div>
 
         <div class="timeline-items">
-            <div class="timeline-item" *ngFor="let item of education; let i = index" [class.left]="i % 2 === 0"
+            <div class="timeline-item" *ngFor="let item of studies; let i = index" [class.left]="i % 2 === 0"
                 [class.right]="i % 2 !== 0">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content-wrapper">

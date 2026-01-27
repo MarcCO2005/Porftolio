@@ -1,51 +1,65 @@
 <section id="proyectos" class="projects-section">
-  <h2 class="projects-title">Proyectos
+  <h2 class="projects-title">{{ ts.t('projects.title') }}
     <span class="projects-title-underline"></span>
   </h2>
   <div class="projects-grid">
     @for (project of projects; let i = $index; track project.title) {
-      <div class="project-card" [ngClass]="getCardPositionClass(i)" #card>
+    <div class="project-card" [ngClass]="getCardPositionClass(i)" #card>
+      <div class="card-img-wrapper">
         @if (project.image) {
-          <img class="project-image" [src]="project.image" [alt]="project.title">
+        <img class="project-image" [src]="project.image" [alt]="project.title">
         }
+      </div>
 
-        <div class="project-content">
-          <h3 class="project-name">{{ project.title }}</h3>
-          <p class="project-description">{{ project.description }}</p>
-          <div class="project-actions">
-            @if (project.demo && !project.code && !project.website && !project.video) {
-              <a [href]="project.demo" target="_blank" class="cta-button primary single-action">Ver demo</a>
-            }
-            @if (project.code && !project.demo && !project.website && !project.video) {
-              <a [href]="project.code" target="_blank" class="cta-button secondary single-action">Ver código</a>
-            }
-            @if (project.website && !project.demo && !project.code && !project.video) {
-              <a [href]="project.website" target="_blank" class="cta-button primary single-action">Página web</a>
-            }
-            @if (project.video && !project.demo && !project.code && !project.website) {
-              <a [href]="project.video" target="_blank" rel="noopener" class="cta-button primary single-action">Ver video demo</a>
-            }
-            <!-- Si hay más de un botón, mostrar los normales -->
-            @if ((project.demo && (project.code || project.website || project.video)) ||
-                 (project.code && (project.demo || project.website || project.video)) ||
-                 (project.website && (project.demo || project.code || project.video)) ||
-                 (project.video && (project.demo || project.code || project.website))) {
-              @if (project.demo) {
-                <a [href]="project.demo" target="_blank" class="cta-button primary">Ver demo</a>
-              }
-              @if (project.code) {
-                <a [href]="project.code" target="_blank" class="cta-button secondary">Ver código</a>
-              }
-              @if (project.website) {
-                <a [href]="project.website" target="_blank" class="cta-button primary">Website</a>
-              }
-              @if (project.video) {
-                <a [href]="project.video" target="_blank" rel="noopener" class="cta-button primary" style="margin:0.5rem 0;display:inline-block;">Ver video demo</a>
-              }
-            }
+      <div class="project-content">
+        <h3 class="project-name">{{ project.title }}</h3>
+        <p class="project-description">{{ project.description }}</p>
+
+        <div class="project-tags">
+          @for (tag of project.tags; track tag) {
+          <span class="project-tag">{{ tag }}</span>
+          }
+        </div>
+
+        <div class="project-actions">
+          @if (project.isPrivate) {
+          <div class="cta-button secondary private-status" [title]="ts.t('projects.privateRepo')">
+            <i class="fas fa-lock"></i> {{ ts.t('projects.private') }}
           </div>
+          }
+
+          @if (project.video && !project.code && !project.website) {
+          <a [href]="project.video" target="_blank" rel="noopener" class="cta-button primary single-action">{{
+            ts.t('projects.video') }}</a>
+          }
+          @if (project.code && !project.video && !project.website) {
+          <a [href]="project.code" target="_blank" class="cta-button secondary single-action">{{
+            ts.t('projects.viewCode') }}</a>
+          }
+          @if (project.website && !project.video && !project.code) {
+          <a [href]="project.website" target="_blank" class="cta-button primary single-action">{{
+            ts.t('projects.website') }}</a>
+          }
+
+          <!-- Si hay más de un botón, mostrar los normales -->
+          @if ((project.video && (project.code || project.website)) ||
+          (project.code && (project.video || project.website)) ||
+          (project.website && (project.video || project.code))) {
+
+          @if (project.video) {
+          <a [href]="project.video" target="_blank" rel="noopener" class="cta-button primary">{{ ts.t('projects.video')
+            }}</a>
+          }
+          @if (project.code) {
+          <a [href]="project.code" target="_blank" class="cta-button secondary">{{ ts.t('projects.viewCode') }}</a>
+          }
+          @if (project.website) {
+          <a [href]="project.website" target="_blank" class="cta-button primary">{{ ts.t('projects.website') }}</a>
+          }
+          }
         </div>
       </div>
+    </div>
     }
   </div>
   <div class="floating-elements">

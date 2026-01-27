@@ -1,5 +1,12 @@
 <header class="header" [class.scrolled]="isScrolled">
   <div class="nav-container">
+    <div class="lang-switch">
+      <button (click)="ts.toggleLanguage()" class="lang-btn"
+        [title]="ts.language === 'es' ? 'Switch to English' : 'Cambiar a Español'">
+        <i class="fas fa-globe"></i>
+        <span>{{ ts.language === 'es' ? 'EN' : 'ES' }}</span>
+      </button>
+    </div>
     <div class="logo">
       <span class="logo-text">{{ name }}</span>
     </div>

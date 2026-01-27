@@ -30,11 +30,11 @@
         <div class="cta-container">
           <button class="cta-button primary" [class.visible]="animationStarted" style="animation-delay: 2.2s;"
             (click)="scrollToSection('#proyectos')">
-            Ver mi trabajo
+            {{ ts.t('jumbotron.viewWork') }}
           </button>
           <button class="cta-button secondary" [class.visible]="animationStarted" style="animation-delay: 2.4s;"
             (click)="scrollToSection('#contacto')">
-            Contáctame
+            {{ ts.t('jumbotron.contactMe') }}
           </button>
         </div>
       </div>
@@ -46,7 +46,7 @@
     <!-- Scroll Indicator -->
     <div class="scroll-indicator" [class.visible]="animationStarted" style="animation-delay: 1s;">
       <div class="scroll-arrow"></div>
-      <span class="scroll-text">Desplázate para ver más</span>
+      <span class="scroll-text">{{ ts.t('jumbotron.scroll') }}</span>
     </div>
   </div>
   <div class="floating-elements">

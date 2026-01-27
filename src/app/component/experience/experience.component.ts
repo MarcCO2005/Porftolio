@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../service/translation.service';
 
 @Component({
     selector: 'app-experience',
@@ -9,31 +10,28 @@ import { CommonModule } from '@angular/common';
     styleUrl: './experience.component.css'
 })
 export class ExperienceComponent {
-    experiences = [
-        {
-            role: 'Applications Developer',
-            company: 'Extramus (Italia)',
-            date: 'FEB 2025 - JUN 2025',
-            description: [
-                'Diseño, despliegue y mantenimiento de aplicaciones web.',
-                'Gestión de bases de datos y resolución de problemas en entornos de desarrollo.',
-                'Trabajo en equipo en un entorno internacional.'
-            ],
-            tags: ['Web Dev', 'Database', 'International Team'],
-            icon: 'fa-solid fa-rocket',
-            isInternship: false
-        },
-        {
-            role: 'Técnico SMR (Prácticas)',
-            company: 'UV (Instituto de Robótica)',
-            date: 'Feb 2023 - Jun 2023',
-            description: [
-                'Reparación, mantenimiento y configuración de dispositivos informáticos.',
-                'Diseño de aplicaciones web y gestión de bases de datos.'
-            ],
-            tags: ['Soporte IT', 'Bases de Datos', 'Web Design'],
-            icon: 'fa-solid fa-graduation-cap',
-            isInternship: true
-        }
-    ];
+    constructor(public ts: TranslationService) { }
+
+    get experiences() {
+        return [
+            {
+                role: this.ts.t('experience.exp1.role'),
+                company: this.ts.t('experience.exp1.company'),
+                date: this.ts.t('experience.exp1.date'),
+                description: this.ts.ta('experience.exp1.desc'),
+                tags: this.ts.ta('experience.exp1.tags'),
+                icon: 'fa-solid fa-rocket',
+                isInternship: false
+            },
+            {
+                role: this.ts.t('experience.exp2.role'),
+                company: this.ts.t('experience.exp2.company'),
+                date: this.ts.t('experience.exp2.date'),
+                description: this.ts.ta('experience.exp2.desc'),
+                tags: this.ts.ta('experience.exp2.tags'),
+                icon: 'fa-solid fa-graduation-cap',
+                isInternship: true
+            }
+        ];
+    }
 }
