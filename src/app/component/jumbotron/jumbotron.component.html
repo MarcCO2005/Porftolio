@@ -6,7 +6,7 @@
     <!-- Contenido personalizado del portafolio -->
     <div class="portfolio-content">
       <div class="text-container">
-        <h1 class="main-title">
+        <h1 class="main-title" aria-label="Marc Cuenca - Desarrollador Full-Stack">
           @for (char of titleChars; track $index) {
           <span class="char" [style.animation-delay]="($index * 0.1) + 's'" [class.visible]="animationStarted">{{ char
             }}</span>
