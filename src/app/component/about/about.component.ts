@@ -27,7 +27,7 @@ export class AboutComponent implements AfterViewInit {
           this.renderer.removeClass(section, 'visible');
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.0 });
     observer.observe(section);
   }
 }

@@ -29,8 +29,8 @@
           }
 
           @if (project.video && !project.code && !project.website) {
-          <a [href]="project.video" target="_blank" rel="noopener" class="cta-button primary single-action">{{
-            ts.t('projects.video') }}</a>
+          <button (click)="openVideo(project.video)" class="cta-button primary single-action">{{
+            ts.t('projects.video') }}</button>
           }
           @if (project.code && !project.video && !project.website) {
           <a [href]="project.code" target="_blank" class="cta-button secondary single-action">{{
@@ -47,8 +47,8 @@
           (project.website && (project.video || project.code))) {
 
           @if (project.video) {
-          <a [href]="project.video" target="_blank" rel="noopener" class="cta-button primary">{{ ts.t('projects.video')
-            }}</a>
+          <button (click)="openVideo(project.video)" class="cta-button primary">{{ ts.t('projects.video')
+            }}</button>
           }
           @if (project.code) {
           <a [href]="project.code" target="_blank" class="cta-button secondary">{{ ts.t('projects.viewCode') }}</a>
@@ -76,4 +76,18 @@
     <div class="floating-element"></div>
     <div class="floating-element"></div>
   </div>
+
+  @if (selectedVideo) {
+  <div class="video-modal" (click)="closeVideo()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-modal" (click)="closeVideo()">
+        <i class="fas fa-times"></i>
+      </button>
+      <video controls autoplay playsinline class="modal-video">
+        <source [src]="selectedVideo" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  }
 </section>

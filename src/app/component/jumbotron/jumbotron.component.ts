@@ -59,7 +59,7 @@ export class JumbotronComponent implements OnInit, AfterViewInit {
       scrollTrigger: {
         trigger: bg,
         start: 'top top',
-        end: '+=100%',
+        end: '+=20%',
         scrub: true,
         pin: true,
         anticipatePin: 1,
@@ -76,11 +76,6 @@ export class JumbotronComponent implements OnInit, AfterViewInit {
     tl.to(content, {
       opacity: 0,
       ease: 'power1.out'
-    }, 0);
-
-    tl.to(bg, {
-      backgroundColor: 'rgba(0,0,0,1)',
-      ease: 'none'
     }, 0);
   }
 

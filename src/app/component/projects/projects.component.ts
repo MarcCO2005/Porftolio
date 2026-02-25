@@ -34,13 +34,25 @@ export class ProjectsComponent implements AfterViewInit {
         description: this.ts.t('projects.p3.desc'),
         image: 'project3.jpg',
         video: '/VideoTaskly.mp4',
-        code: 'https://github.com/MarcCO2005/Taskly_TFG.git',
+        code: 'https://github.com/MarcCO2005/TASKLY_',
         tags: ['Firebase', 'Angular', 'Symfony', 'SMS Service']
       }
     ];
   }
 
   visibleCards: boolean[] = [];
+  selectedVideo: string | null = null;
+
+  openVideo(videoUrl: string) {
+    this.selectedVideo = videoUrl;
+    // Prevent scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeVideo() {
+    this.selectedVideo = null;
+    document.body.style.overflow = 'auto';
+  }
 
   ngAfterViewInit() {
     // Animación de la sección completa
