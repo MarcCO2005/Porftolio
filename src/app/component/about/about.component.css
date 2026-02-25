@@ -24,23 +24,23 @@ body {
 
 .about-section {
   position: relative;
-  padding: 3rem 1.5rem 5rem 1.5rem;
+  padding: 5rem 1.5rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--dark-bg);
+  background: #000;
   overflow: hidden;
   z-index: 10;
-  width: 100%;
-  max-width: 1400px;
-  border-radius: 20px;
-  margin: -5vh auto 0 auto;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  border-radius: 0;
+  margin-top: 0;
+  box-shadow: none;
 }
 
 .about-section.visible {
-  animation: fadeInUp 0.5s forwards;
+  /* Only animate children if needed, but not the section itself for background continuity */
   opacity: 1;
 }
 
