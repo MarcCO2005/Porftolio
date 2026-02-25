@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://porftolio-delta.vercel.app/
+Sitemap: https://porftolio-delta.vercel.app/sitemap.xml
