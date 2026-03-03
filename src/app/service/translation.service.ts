@@ -44,7 +44,7 @@ export class TranslationService {
                 contact: 'Contacto'
             },
             jumbotron: {
-                role: 'Desarrollador Full-Stack',
+                role: 'Marc Cuenca Olmos',
                 subtitle: 'Especializado en crear soluciones web potentes, limpias y escalables.',
                 desc1: 'Apasionado por transformar ideas en código eficiente utilizando PHP, Java y JavaScript',
                 desc2: 'Comprometido con la arquitectura de software de calidad y el aprendizaje continuo.',
@@ -158,8 +158,13 @@ export class TranslationService {
                 valencia: 'Valencia, España'
             },
             footer: {
+                contact: 'Contacto',
+                explore: 'Explorar',
+                connect: 'Conectar',
                 location: 'Valencia, España',
-                rights: 'Todos los derechos reservados.'
+                rights: 'Todos los derechos reservados.',
+                madeWith: 'Hecho con',
+                in: 'en'
             }
         },
         en: {
@@ -172,7 +177,7 @@ export class TranslationService {
                 contact: 'Contact'
             },
             jumbotron: {
-                role: 'Full-Stack Developer',
+                role: 'Marc Cuenca Olmos',
                 subtitle: 'Specialized in creating powerful, clean, and scalable web solutions.',
                 desc1: 'Passionate about transforming ideas into efficient code using PHP, Java, and JavaScript',
                 desc2: 'Committed to quality software architecture and continuous learning.',
@@ -286,8 +291,13 @@ export class TranslationService {
                 valencia: 'Valencia, Spain'
             },
             footer: {
+                contact: 'Contact',
+                explore: 'Explore',
+                connect: 'Connect',
                 location: 'Valencia, Spain',
-                rights: 'All rights reserved.'
+                rights: 'All rights reserved.',
+                madeWith: 'Made with',
+                in: 'in'
             }
         }
     };

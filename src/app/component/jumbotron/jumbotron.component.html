@@ -6,7 +6,7 @@
     <!-- Contenido personalizado del portafolio -->
     <div class="portfolio-content">
       <div class="text-container">
-        <h1 class="main-title" aria-label="Marc Cuenca - Desarrollador Full-Stack">
+        <h1 class="main-title" aria-label="Marc Cuenca Olmos - Desarrollador Full-Stack">
           @for (char of titleChars; track $index) {
           <span class="char" [style.animation-delay]="($index * 0.1) + 's'" [class.visible]="animationStarted">{{ char
             }}</span>
@@ -42,12 +42,12 @@
 
     <!-- Contenido proyectado desde el padre -->
     <ng-content></ng-content>
+  </div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" [class.visible]="animationStarted" style="animation-delay: 1s;">
-      <div class="scroll-arrow"></div>
-      <span class="scroll-text">{{ ts.t('jumbotron.scroll') }}</span>
-    </div>
+  <!-- Scroll Indicator - Moved outside jumbotron-content to avoid fading -->
+  <div class="scroll-indicator" [class.visible]="animationStarted" style="animation-delay: 1s;">
+    <div class="scroll-arrow"></div>
+    <span class="scroll-text">{{ ts.t('jumbotron.scroll') }}</span>
   </div>
   <div class="floating-elements">
     <div class="floating-element"></div>

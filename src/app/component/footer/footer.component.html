@@ -1,14 +1,49 @@
-<footer class="footer bg-dark text-light py-4 mt-5">
-  <div class="container text-center">
-    <div class="mb-2">
-      <strong>Marc Cuenca Olmos</strong>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- Info Personal -->
+      <div class="footer-info">
+        <h5>{{ ts.t('footer.contact') }}</h5>
+        <h3>Marc Cuenca Olmos</h3>
+        <p>{{ ts.t('jumbotron.subtitle') }}</p>
+        <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #0078d4;"></i> {{ ts.t('footer.location')
+          }}</p>
+      </div>
+
+      <!-- Links Rápidos -->
+      <div class="footer-nav">
+        <h5>{{ ts.t('footer.explore') }}</h5>
+        <ul class="footer-links">
+          <li><a href="#inicio">{{ ts.t('nav.home') }}</a></li>
+          <li><a href="#sobre-mi">{{ ts.t('nav.about') }}</a></li>
+          <li><a href="#proyectos">{{ ts.t('nav.projects') }}</a></li>
+          <li><a href="#contacto">{{ ts.t('nav.contact') }}</a></li>
+        </ul>
+      </div>
+
+      <!-- Redes Sociales -->
+      <div class="footer-social">
+        <h5>{{ ts.t('footer.connect') }}</h5>
+        <div class="social-links">
+          <a href="https://github.com/MarcCO2005" target="_blank" title="GitHub" class="social-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/marccuenca/" target="_blank" title="LinkedIn" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:mcuencaolmos@gmail.com" title="Email" class="social-icon">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="mb-2">
-      {{ ts.t('footer.location') }}
-    </div>
-    <!-- Aquí puedes añadir iconos/enlaces de redes sociales si lo deseas -->
-    <div class="mt-3 small">
-      &copy; {{ year }} Marc Cuenca Olmos. {{ ts.t('footer.rights') }}
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom">
+      <p>&copy; {{ year }} Marc Cuenca Olmos. {{ ts.t('footer.rights') }}</p>
+      <p>{{ ts.t('footer.madeWith') }} <i class="fas fa-heart" style="color: #ff4d4d; margin: 0 5px;"></i> {{
+        ts.t('footer.in') }} {{ ts.t('footer.location') }}</p>
     </div>
   </div>
 </footer>

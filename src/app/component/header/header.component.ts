@@ -11,7 +11,7 @@ import { TranslationService } from '../../service/translation.service';
 })
 export class HeaderComponent implements AfterViewInit, OnInit, OnDestroy {
 
-  name = 'Marc Cuenca';
+  name = 'Marc Cuenca Olmos';
   isScrolled = false;
   menuOpen = false;
   activeSection: string = '';
